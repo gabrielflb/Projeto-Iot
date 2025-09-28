@@ -1,0 +1,55 @@
+.history-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+
+.status-completo {
+  background-color: #28a745; /* Verde */
+}
+
+.status-cancelado {
+  background-color: #dc3545; /* Vermelho */
+}
+
+.status-ativo {
+  background-color: #ffc107; /* Amarelo */
+  color: #333;
+}

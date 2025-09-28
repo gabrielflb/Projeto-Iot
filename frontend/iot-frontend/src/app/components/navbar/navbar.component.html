@@ -1,0 +1,13 @@
+<nav class="main-navbar">
+  <ul>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/history" routerLinkActive="active-link">Meu Histórico</a>
+    </li>
+    <li *ngIf="isAdmin()">
+      <a routerLink="/admin/resources" routerLinkActive="active-link">Administração</a>
+    </li>
+  </ul>
+</nav>

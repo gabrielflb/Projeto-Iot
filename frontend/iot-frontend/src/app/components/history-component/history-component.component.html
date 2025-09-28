@@ -1,0 +1,32 @@
+<div class="history-container">
+  <h1>Meu Histórico de Reservas</h1>
+
+  <div *ngIf="isLoading" class="loading">Carregando histórico...</div>
+
+  <div *ngIf="!isLoading && history.length === 0" class="no-results">
+    <p>Você ainda não fez nenhuma reserva.</p>
+  </div>
+
+  <table *ngIf="!isLoading && history.length > 0">
+    <thead>
+      <tr>
+        <th>Recurso</th>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of history">
+        <td>{{ item.resource.name }}</td>
+        <td>{{ item.tempoInicial | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>{{ item.tempoFinal | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>
+          <span class="status" [ngClass]="'status-' + item.status.toLowerCase()">
+            {{ item.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

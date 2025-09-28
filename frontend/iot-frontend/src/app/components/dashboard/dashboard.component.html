@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+  <h1>Mapa de Disponibilidade</h1>
+  <div *ngIf="isLoading" class="loading">Carregando recursos...</div>
+
+  <div *ngIf="!isLoading" class="grid-container">
+    <div *ngFor="let resource of resources" class="resource-card" [ngClass]="{
+        'status-livre': resource.status === 'LIVRE',
+        'status-ocupado': resource.status === 'OCUPADO'
+      }">
+      <h3>{{ resource.name }}</h3>
+      <p>Tipo: {{ resource.type }}</p>
+      <p>Status: <strong>{{ resource.status }}</strong></p>
+      
+      <div class="card-actions">
+        <button 
+          class="reserve-btn"
+          *ngIf="resource.status === 'LIVRE'" 
+          (click)="handleReserve(resource.id)">
+          Reservar
+        </button>
+        <button 
+          class="release-btn"
+          *ngIf="resource.status === 'OCUPADO'"
+          (click)="handleRelease(resource.id)">
+          Liberar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
