@@ -1,0 +1,4 @@
+ifba\br\demo\service\imp\ResourceServiceImp.class
+ifba\br\demo\controller\imp\ResourceController.class
+ifba\br\demo\controller\imp\ReservaController.class
+ifba\br\demo\domain\dto\ReservaRequest.class
